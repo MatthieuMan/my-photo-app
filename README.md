@@ -1,6 +1,6 @@
 # my-photo-app
 
-A photo app using Vue.js
+A photo app using Vue.js 
 
 ## Project setup
 ```
