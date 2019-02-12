@@ -1,6 +1,7 @@
 {
   "name": "my-photo-app",
   "version": "0.1.0",
+  "author": "Matthieu Mandoula",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
