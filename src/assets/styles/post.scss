@@ -1,12 +1,12 @@
-.vuegram-post {
+.post {
   padding-top: 50px;
 }
 
-.vuegram-post ~ .vuegram-post {
+.post ~ .post {
   padding-top: 0;
 }
 
-.vuegram-post {
+.post {
   padding: 5px 0;
 
   .header {
@@ -71,6 +71,6 @@
   }
 }
 
-.vuegram-post:last-child {
+.post:last-child {
   margin-bottom: 80px;
 }
