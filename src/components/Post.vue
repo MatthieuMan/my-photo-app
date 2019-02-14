@@ -10,11 +10,15 @@
         </div>
         <div class="image-container"
              :class="post.filter"
-             :style="{ backgroundImage: 'url(' + post.postImage + ')' }">
+             :style="{ backgroundImage: 'url(' + post.postImage + ')' }"
+             v-on:dblclick="like">
         </div>
         <div class="content">
             <div class="heart">
-                <i class="far fa-heart fa-lg"></i>
+                <i class="far fa-heart fa-lg"
+                   :class="{'fas': this.post.hasBeenLiked}"
+                   @click="like"><!--shorthand for v-on:click-->
+                </i>
             </div>
             <p class="likes">{{post.likes}} likes</p>
             <p class="caption"><span>{{post.username}}</span> {{post.caption}}</p>
@@ -27,10 +31,18 @@
         name: "Post",
         props: {
             post: Object
+        },
+        methods:{
+            like(){
+                //increment or decrement the post.likes value based on the truthiness of post.hasBeenLiked
+                //And toggle the value of the post.hasBeenLiked boolean
+                this.post.hasBeenLiked ? this.post.likes-- : this.post.likes++;
+                this.post.hasBeenLiked = !this.post.hasBeenLiked;
+            }
         }
     }
 </script>
 
 <style lang="scss" src="../assets/styles/post.scss">
-
+    //Styles from assets directory
 </style>
