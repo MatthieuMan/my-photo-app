@@ -6,7 +6,7 @@ export default [
       "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1211695/tropical_beach.jpg",
     likes: 36,
     hasBeenLiked: false,
-    caption: "When you're ready for summer '19 ☀️",
+    caption: "I know you're all jealous ☀️",
     filter: "perpetua"
   },
   {
@@ -16,11 +16,11 @@ export default [
       "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1211695/downtown.jpg",
     likes: 20,
     hasBeenLiked: false,
-    caption: "Views from the six...",
+    caption: "View from the sky...",
     filter: "clarendon"
   },
   {
-    username: "Olga ",
+    username: "Olga",
     userImage:
       "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1211695/pug_personal.jpg",
     postImage:
