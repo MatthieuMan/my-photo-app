@@ -7,21 +7,32 @@
             <Post v-for="post in postsFromUppermostComponent" :post="post" :key="postsFromUppermostComponent.indexOf(post)"></Post>
             <!-- Post Component -->
         </div>
+        <div v-if="step === 2"><!--If an image is uploaded we're in the second step-->
+            <div class="selected-image"
+                 :style="{ backgroundImage: 'url(' + image + ')' }"></div>
+            <div class="filter-container">
+                <!-- filter component-->
+                <filter-type v-for="filter in filtersFromUppermostComponent" :filter="filter" :image="image" :key="filtersFromUppermostComponent.indexOf(filter)" />
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
     import Post from "./Post";
+    import FilterType from "./FilterType"
 
     export default {
         name: "Phonebody",
         props: {
             step: Number,
             postsFromUppermostComponent: Array, // specifying prop validation
-            filters: Array
+            filtersFromUppermostComponent: Array,
+            image: String //a file input’s value attribute is often represented as a string.
         },
         components: {
-            Post
+            Post,
+            "filter-type": FilterType //component declared as filter-type
         }
     }
 </script>
