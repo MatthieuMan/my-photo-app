@@ -35,6 +35,7 @@
     //Raw data actually
     import posts from "./data/posts"
     import filters from  "./data/filters"
+    import EventBus from "./event-bus"
 
     export default {
         name: "App",
@@ -47,6 +48,12 @@
                 selectedFilter: "",
                 caption: ""
             };
+        },//created() hook is run when a Vue instance/component has just been created and the instance data and events can be accessed.
+        created: function () {
+            //event listner Observer
+            EventBus.$on('new-filter',  evt => {
+                this.selectedFilter = evt.filter;
+            });
         },
         methods: {
             uploadImage(evt) {

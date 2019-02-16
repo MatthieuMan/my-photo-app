@@ -9,7 +9,8 @@
         </div>
         <div v-if="step === 2"><!--If an image is uploaded we're in the second step-->
             <div class="selected-image"
-                 :style="{ backgroundImage: 'url(' + image + ')' }"></div>
+                 :style="{ backgroundImage: 'url(' + image + ')' }"
+                 :class="selectedFilter"></div><!--selectedFilter prop being used to determine what filter type should be applied-->
             <div class="filter-container">
                 <!-- filter component-->
                 <filter-type v-for="filter in filtersFromUppermostComponent" :filter="filter" :image="image" :key="filtersFromUppermostComponent.indexOf(filter)" />
@@ -28,7 +29,8 @@
             step: Number,
             postsFromUppermostComponent: Array, // specifying prop validation
             filtersFromUppermostComponent: Array,
-            image: String //a file input’s value attribute is often represented as a string.
+            image: String, //a file input’s value attribute is often represented as a string.
+            selectedFilter: String
         },
         components: {
             Post,

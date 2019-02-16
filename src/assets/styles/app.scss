@@ -63,12 +63,12 @@ body,
   }
 }
 
-.feed {
-  height: 100%;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  margin-right: -15px;
-}
+//.feed {
+//  height: 100%;
+//  overflow-y: scroll;
+//  overflow-x: hidden;
+//  margin-right: -15px;
+//}
 
 .caption-container {
   height: 210px;
@@ -89,19 +89,19 @@ body,
   }
 }
 
-.selected-image {
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center center;
-  height: 330px;
-}
+//.selected-image {
+//  background-repeat: no-repeat;
+//  background-size: cover;
+//  background-position: center center;
+//  height: 330px;
+//}
 
-.filter-container {
-  height: 210px;
-  padding: 30px 10px;
-  white-space: nowrap;
-  overflow-x: hidden;
-}
+//.filter-container {
+//  height: 210px;
+//  padding: 30px 10px;
+//  white-space: nowrap;
+//  overflow-x: hidden;
+//}
 
 .phone-footer {
   height: 35px;
