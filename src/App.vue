@@ -13,6 +13,11 @@
            @click="step++">
           Next
         </a>
+        <a class="next-cta"
+           v-if="step === 3"
+           @click="sharePost">
+          Share
+        </a>
       </div>
       <!-- PhoneBody Component -->
       <!-- bind data as props, shorthands will be ":posts" -->
@@ -21,7 +26,7 @@
                  v-bind:filtersFromUppermostComponent="filters"
                  :image="image"
                  :selectedFilter="selectedFilter"
-                 v-model="caption"/>
+                 v-model="caption" />
       <!-- Phonebody Component -->
       <div class="phone-footer">
         <div class="home-cta">
@@ -87,6 +92,19 @@
                 this.selectedFilter = "";
                 this.caption = "";
                 this.step = 1
+            },
+            sharePost() {
+                const post = {
+                    username: "Matthieu the king",
+                    userImage:
+                        "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1211695/vue_lg_bg.png",
+                    postImage: this.image,
+                    likes: 0,
+                    caption: this.caption,
+                    filter: this.selectedFilter
+                };
+                this.posts.unshift(post);
+                this.goToHome();
             }
         },
         components: {
