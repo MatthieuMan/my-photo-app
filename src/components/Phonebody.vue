@@ -16,11 +16,24 @@
                 <filter-type v-for="filter in filtersFromUppermostComponent" :filter="filter" :image="image" :key="filtersFromUppermostComponent.indexOf(filter)" />
             </div>
         </div>
+        <div v-if="step === 3">
+            <div class="selected-image"
+                 :class="selectedFilter"
+                 :style="{ backgroundImage: 'url(' + image + ')' }">
+            </div>
+            <div class="caption-container">
+                <textarea class="caption-input"
+                          placeholder="Write a comment buddy..."
+                          type="text" :value="value"
+                          @input="$emit('input', $event.target.value)"><!--Same as v-model-->
+                </textarea>
+            </div>
+        </div>
     </div>
 </template>
 
 <script>
-    import Post from "./Post";
+    import Post from "./Post"
     import FilterType from "./FilterType"
 
     export default {
@@ -30,7 +43,8 @@
             postsFromUppermostComponent: Array, // specifying prop validation
             filtersFromUppermostComponent: Array,
             image: String, //a file input’s value attribute is often represented as a string.
-            selectedFilter: String
+            selectedFilter: String,
+            value: String
         },
         components: {
             Post,
