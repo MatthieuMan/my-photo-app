@@ -3,6 +3,16 @@
     <div class="app-phone">
       <div class="phone-header">
         <h1>My Photo App</h1>
+        <a class="cancel-cta"
+           v-if="step === 2 || step === 3"
+           @click="goToHome">
+          Cancel
+        </a>
+        <a class="next-cta"
+           v-if="step === 2"
+           @click="step++">
+          Next
+        </a>
       </div>
       <!-- PhoneBody Component -->
       <!-- bind data as props, shorthands will be ":posts" -->
@@ -15,11 +25,11 @@
       <!-- Phonebody Component -->
       <div class="phone-footer">
         <div class="home-cta">
-          <i class="fas fa-home fa-lg"></i>
+          <i class="fas fa-home fa-lg" @click="goToHome"></i>
         </div>
         <div class="upload-cta">
-          <input type="file" name="file" id="file" class="inputfile"
-                 @change="uploadImage"/><!--hold the responsibility of uploading the image and then directing the user to step 2.-->
+          <!--hold the responsibility of uploading the image and then directing the user to step 2.-->
+          <input type="file" name="file" id="file" class="inputfile" @change="uploadImage" :disabled="step !== 1"/>
           <label for="file">
             <i class="far fa-plus-square fa-lg"></i>
           </label>
@@ -47,13 +57,13 @@
                 image: "",
                 selectedFilter: "",
                 caption: ""
-            };
+            }
         },//created() hook is run when a Vue instance/component has just been created and the instance data and events can be accessed.
         created: function () {
             //event listner Observer
             EventBus.$on('new-filter',  evt => {
                 this.selectedFilter = evt.filter;
-            });
+            })
         },
         methods: {
             uploadImage(evt) {
@@ -71,12 +81,18 @@
                 // Now when the user attempts to re-upload the same file again;
                 // it will always be detected as a change event.
                 document.querySelector("#file").value = "";
+            },
+            goToHome(){
+                this.image = "";
+                this.selectedFilter = "";
+                this.caption = "";
+                this.step = 1
             }
         },
         components: {
             Phonebody
         }
-    };
+    }
 </script>
 
 <style lang="scss" src="./assets/styles/app.scss">
