@@ -1,6 +1,6 @@
 export default [
   {
-    username: "Philippe de sousa",
+    username: "Matthieu",
     userImage: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1211695/me_3.jpg",
     postImage:
       "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1211695/tropical_beach.jpg",
@@ -10,7 +10,7 @@ export default [
     filter: "perpetua"
   },
   {
-    username: "Geni Long",
+    username: "Geni",
     userImage: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1211695/me2.png",
     postImage:
       "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1211695/downtown.jpg",
