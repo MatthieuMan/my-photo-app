@@ -1,7 +1,7 @@
 <template>
     <div class="phone-body">
         <!--the feed should only be shown when the user is at step 1-->
-        <div v-if="step === 1" class="feed">
+        <div v-if="step === 1" class="feed" v-dragscroll.y>
             <!-- Post Component -->
             <!--components have isolated scopes of their own. In order to pass the iterated data into the component, we should also use props-->
             <Post v-for="post in postsFromUppermostComponent" :post="post" :key="postsFromUppermostComponent.indexOf(post)"></Post>
@@ -11,7 +11,7 @@
             <div class="selected-image"
                  :style="{ backgroundImage: 'url(' + image + ')' }"
                  :class="selectedFilter"></div><!--selectedFilter prop being used to determine what filter type should be applied-->
-            <div class="filter-container">
+            <div class="filter-container" v-dragscroll.x>
                 <!-- filter component-->
                 <filter-type v-for="filter in filtersFromUppermostComponent" :filter="filter" :image="image" :key="filtersFromUppermostComponent.indexOf(filter)" />
             </div>
