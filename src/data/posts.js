@@ -10,7 +10,7 @@ export default [
     filter: "perpetua"
   },
   {
-    username: "Guicilio",
+    username: "Geni",
     userImage: "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1211695/me2.png",
     postImage:
       "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1211695/downtown.jpg",
@@ -20,7 +20,7 @@ export default [
     filter: "clarendon"
   },
   {
-    username: "Marionnie",
+    username: "Olga",
     userImage:
       "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1211695/pug_personal.jpg",
     postImage:

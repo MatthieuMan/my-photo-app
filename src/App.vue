@@ -95,7 +95,7 @@
             },
             sharePost() {
                 const post = {
-                    username: "Matthieu the king",
+                    username: "Guest",
                     userImage:
                         "https://s3-us-west-2.amazonaws.com/s.cdpn.io/1211695/vue_lg_bg.png",
                     postImage: this.image,
