@@ -1,6 +1,6 @@
 # my-photo-app
 
-A photo app using Vue.js 
+A instagram like photo app using Vue.js, ( for more convenience and simplicity, data are not persisted ) 
 
 ## Project setup
 ```
